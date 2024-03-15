@@ -14,12 +14,12 @@ include_wkhtmltopdf: false
 odoo_test_flavor: Odoo
 odoo_version: 16.0
 org_name: Akretion
-org_slug: Akretion
+org_slug: akretion
 rebel_module_groups: []
 repo_description: Odoo modules for managing assets, SSO integration
 repo_name: Odoo modules for ak hosting
 repo_slug: ak-cloud-france-oi
-repo_website: https://github.com/Akretion/ak-cloud-france-oi
+repo_website: https://github.com/akretion/ak-cloud-france-oi
 use_pyproject_toml: true
 use_ruff: false
 
