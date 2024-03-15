@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[auth_oidc_akretion_data](auth_oidc_akretion_data/) | 16.0.1.0.0 |  | This module add auth oidc configuration data for akretion
 [database_age_cron](database_age_cron/) | 16.0.1.0.0 |  | Run a cron that determines database age
 
 [//]: # (end addons)
