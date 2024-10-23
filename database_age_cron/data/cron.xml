@@ -4,7 +4,6 @@
         <field name="name">Database Age Cron</field>
         <field name="interval_number">1</field>
         <field name="interval_type">minutes</field>
-        <field name="numbercall">-1</field>
         <field name="priority">10</field>
         <field name="active">True</field>
         <field name="state">code</field>
