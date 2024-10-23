@@ -6,9 +6,9 @@
 {
     "name": "attachment_asset_in_db",
     "summary": "Always store odoo asset in database",
-    "version": "14.0.1.0.0",
+    "version": "16.0.1.0.0",
     "category": "Uncategorized",
-    "website": "https://github.com/akretion/ak-odoo-incubator",
+    "website": "https://github.com/akretion/ak-cloud-france-oi",
     "author": " Akretion",
     "license": "AGPL-3",
     "application": False,
