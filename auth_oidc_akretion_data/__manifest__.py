@@ -8,7 +8,7 @@
     "version": "16.0.1.0.0",
     "license": "AGPL-3",
     "author": "Akretion",
-    "website": "https://github.com/Akretion/ak-cloud-france-oi",
+    "website": "https://github.com/akretion/ak-cloud-france-oi",
     "depends": [
         "auth_oidc",
     ],
