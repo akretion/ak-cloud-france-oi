@@ -1,0 +1,11 @@
+[project]
+name = "odoo-addons-akretion-ak-cloud-france-oi"
+version = "18.0.20241030.0"
+dependencies = [
+    "odoo-addon-database_age_cron==18.0.*",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 18.0",
+]
