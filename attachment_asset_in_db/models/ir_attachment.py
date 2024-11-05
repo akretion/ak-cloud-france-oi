@@ -59,6 +59,8 @@ class IrAttachment(models.Model):
         records = self.browse(False)
         for vals in vals_list:
             if vals.get("name") in ("web_icon_data", "favicon"):
-                self = self.with_context(force_db_storage=True)
-            records |= super(IrAttachment, self).create([vals])
+                newself = self.with_context(force_db_storage=True)
+            else:
+                newself = self
+            records |= super(IrAttachment, newself).create([vals])
         return records
