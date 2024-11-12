@@ -8,7 +8,7 @@
     "summary": "Always store odoo asset in database",
     "version": "16.0.1.1.0",
     "category": "Uncategorized",
-    "website": "https://github.com/Akretion/ak-cloud-france-oi",
+    "website": "https://github.com/akretion/ak-cloud-france-oi",
     "author": " Akretion",
     "license": "AGPL-3",
     "application": False,
