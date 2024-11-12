@@ -4,10 +4,10 @@
 
 import base64
 
-from odoo.tests import SavepointCase
+from odoo.tests import TransactionCase
 
 
-class TestAttachment(SavepointCase):
+class TestAttachment(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
