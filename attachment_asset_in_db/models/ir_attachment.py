@@ -36,8 +36,15 @@ class IrAttachment(models.Model):
             )
 
     def _store_in_db(self, mimetype):
+        # odoo website editor generates "application/octet-stream"
+        # so we need to also check with file name
         return (
             mimetype in ("text/scss", "text/css", "application/javascript")
+            or (
+                mimetype == "application/octet-stream"
+                and len(self) == 1
+                and self.name.endswith((".css", ".css.map", ".js", ".js.map", ".scss"))
+            )
             or self._context.get("force_db_storage")
             or (len(self) == 1 and self.name in ("web_icon_data", "favicon"))
         )
