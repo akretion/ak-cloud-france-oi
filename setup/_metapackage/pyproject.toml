@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-akretion-ak-cloud-france-oi"
-version = "18.0.20241030.1"
+version = "18.0.20241210.0"
 dependencies = [
+    "odoo-addon-attachment_asset_in_db==18.0.*",
     "odoo-addon-auth_oidc_akretion_data==18.0.*",
     "odoo-addon-database_age_cron==18.0.*",
 ]
