@@ -6,7 +6,7 @@
 {
     "name": "attachment_asset_in_db",
     "summary": "Always store odoo asset in database",
-    "version": "18.0.1.0.0",
+    "version": "17.0.1.0.0",
     "category": "Uncategorized",
     "website": "https://github.com/akretion/ak-cloud-france-oi",
     "author": " Akretion",
