@@ -1,0 +1,13 @@
+[project]
+name = "odoo-addons-akretion-ak-cloud-france-oi"
+version = "17.0.20250205.0"
+dependencies = [
+    "odoo-addon-attachment_asset_in_db>=17.0dev,<17.1dev",
+    "odoo-addon-auth_oidc_akretion_data>=17.0dev,<17.1dev",
+    "odoo-addon-database_age_cron>=17.0dev,<17.1dev",
+]
+classifiers=[
+    "Programming Language :: Python",
+    "Framework :: Odoo",
+    "Framework :: Odoo :: 17.0",
+]
