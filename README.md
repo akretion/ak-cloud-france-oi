@@ -17,7 +17,13 @@ https://github.com/akretion/ak-cloud-france-oi
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[attachment_asset_in_db](attachment_asset_in_db/) | 17.0.1.0.0 |  | Always store odoo asset in database
+[auth_oidc_akretion_data](auth_oidc_akretion_data/) | 17.0.1.0.0 |  | This module add auth oidc configuration data for akretion
+[database_age_cron](database_age_cron/) | 17.0.1.0.0 |  | Run a cron that determines database age
 
 [//]: # (end addons)
 
