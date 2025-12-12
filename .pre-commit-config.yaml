@@ -1,7 +1,6 @@
 exclude: |
   (?x)
   # NOT INSTALLABLE ADDONS
-  ^attachment_asset_in_db/|
   ^auth_oidc_akretion_data/|
   ^database_age_cron/|
   # END NOT INSTALLABLE ADDONS
