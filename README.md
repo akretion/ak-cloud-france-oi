@@ -1,8 +1,8 @@
 
 <!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
-[![Pre-commit Status](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/pre-commit.yml/badge.svg?branch=18.0)](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/pre-commit.yml?query=branch%3A18.0)
-[![Build Status](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/test.yml/badge.svg?branch=18.0)](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/test.yml?query=branch%3A18.0)
-[![codecov](https://codecov.io/gh/akretion/ak-cloud-france-oi/branch/18.0/graph/badge.svg)](https://codecov.io/gh/akretion/ak-cloud-france-oi)
+[![Pre-commit Status](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/pre-commit.yml/badge.svg?branch=19.0)](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/pre-commit.yml?query=branch%3A19.0)
+[![Build Status](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/test.yml/badge.svg?branch=19.0)](https://github.com/akretion/ak-cloud-france-oi/actions/workflows/test.yml?query=branch%3A19.0)
+[![codecov](https://codecov.io/gh/akretion/ak-cloud-france-oi/branch/19.0/graph/badge.svg)](https://codecov.io/gh/akretion/ak-cloud-france-oi)
 <!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
 
 <!-- /!\ do not modify above this line -->
@@ -16,15 +16,6 @@ Odoo modules for managing assets, SSO integration
 <!-- prettier-ignore-start -->
 
 [//]: # (addons)
-
-Available addons
-----------------
-addon | version | maintainers | summary
---- | --- | --- | ---
-[attachment_asset_in_db](attachment_asset_in_db/) | 18.0.1.0.0 |  | Always store odoo asset in database
-[auth_oidc_akretion_data](auth_oidc_akretion_data/) | 18.0.1.0.0 |  | This module add auth oidc configuration data for akretion
-[database_age_cron](database_age_cron/) | 18.0.1.0.0 |  | Run a cron that determines database age
-
 [//]: # (end addons)
 
 <!-- prettier-ignore-end -->
