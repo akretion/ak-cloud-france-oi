@@ -14,4 +14,5 @@
     ],
     "data": ["data/ir_auth_oauth_provide_data.xml"],
     "demo": [],
+    'installable': False,
 }
