@@ -45,7 +45,7 @@ class IrAttachment(models.Model):
                 and len(self) == 1
                 and self.name.endswith((".css", ".css.map", ".js", ".js.map", ".scss"))
             )
-            or self._context.get("force_db_storage")
+            or self.env.context.get("force_db_storage")
             or (len(self) == 1 and self.name in ("web_icon_data", "favicon"))
         )
 
