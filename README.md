@@ -22,13 +22,13 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [attachment_asset_in_db](attachment_asset_in_db/) | 19.0.1.0.0 |  | Always store odoo asset in database
+[auth_oidc_akretion_data](auth_oidc_akretion_data/) | 19.0.1.0.0 |  | This module add auth oidc configuration data for akretion
 
 
 Unported addons
 ---------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[auth_oidc_akretion_data](auth_oidc_akretion_data/) | 18.0.1.0.0 (unported) |  | This module add auth oidc configuration data for akretion
 [database_age_cron](database_age_cron/) | 18.0.1.0.0 (unported) |  | Run a cron that determines database age
 
 [//]: # (end addons)

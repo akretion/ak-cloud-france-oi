@@ -1,8 +1,9 @@
 [project]
 name = "odoo-addons-akretion-ak-cloud-france-oi"
-version = "19.0.20251215.0"
+version = "19.0.20260427.0"
 dependencies = [
     "odoo-addon-attachment_asset_in_db==19.0.*",
+    "odoo-addon-auth_oidc_akretion_data==19.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",
