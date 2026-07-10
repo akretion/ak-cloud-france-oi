@@ -29,7 +29,7 @@ Unported addons
 ---------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[database_age_cron](database_age_cron/) | 18.0.1.0.0 (unported) |  | Run a cron that determines database age
+[database_age_cron](database_age_cron/) | 19.0.1.0.0 (unported) |  | Run a cron that determines database age
 
 [//]: # (end addons)
 
