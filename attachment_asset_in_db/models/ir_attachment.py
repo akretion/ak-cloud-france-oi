@@ -31,9 +31,7 @@ class IrAttachment(models.Model):
         if len(ids) > 0:
             _logger.info("Migrate %s asset Attachment into database", len(ids))
         for attachment in self.browse(ids):
-            attachment.write(
-                {"datas": attachment.datas, "mimetype": attachment.mimetype}
-            )
+            attachment.write({"raw": attachment.raw, "mimetype": attachment.mimetype})
 
     def _store_in_db(self, mimetype):
         # odoo website editor generates "application/octet-stream"
@@ -51,12 +49,13 @@ class IrAttachment(models.Model):
 
     def _get_datas_related_values(self, data, mimetype):
         if self._store_in_db(mimetype):
+            checksum = self._compute_checksum(data)
             return {
-                "file_size": len(data),
-                "checksum": self._compute_checksum(data),
-                "index_content": self._index(data, mimetype),
+                "file_size": data.size,
+                "checksum": checksum,
+                "index_content": self._index(data, mimetype, checksum=checksum),
                 "store_fname": False,
-                "db_datas": data,
+                "db_datas": data or False,
             }
         else:
             return super()._get_datas_related_values(data, mimetype)
