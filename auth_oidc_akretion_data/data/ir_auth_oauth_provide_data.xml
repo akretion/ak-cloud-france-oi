@@ -6,7 +6,8 @@
         <field name="token_map">email:user_id</field>
         <field name="enabled">True</field>
         <field name="body">Akretion</field>
-        <field name="css_class">fa fa-fw fa-sign-in text-primary</field>
+        <field name="icon">login</field>
+        <field name="css_class">oi oi-fw text-primary</field>
         <field
             name="auth_endpoint"
         >https://auth.akretion.com/realms/master/protocol/openid-connect/auth</field>
