@@ -2,8 +2,6 @@
 # @author Sébastien BEAU <sebastien.beau@akretion.com>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-import base64
-
 from odoo.tests import TransactionCase
 
 
@@ -11,24 +9,21 @@ class TestAttachment(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.data = base64.b64encode(b"foo")
+        cls.data = b"foo"
 
     def _create_attachment(self, name, mimetype=None):
-        return self.env["ir.attachment"].create(
-            {
-                "name": name,
-                "datas": self.data,
-                "mimetype": mimetype,
-            }
-        )
+        vals = {"name": name, "raw": self.data}
+        if mimetype:
+            vals["mimetype"] = mimetype
+        return self.env["ir.attachment"].create(vals)
 
     def test_asset_web_icon_data(self):
         attachment = self._create_attachment("web_icon_data")
-        self.assertEqual(attachment.db_datas, b"foo")
+        self.assertEqual(attachment.db_datas.content, b"foo")
 
     def test_asset_css(self):
         attachment = self._create_attachment("foo", mimetype="text/css")
-        self.assertEqual(attachment.db_datas, b"foo")
+        self.assertEqual(attachment.db_datas.content, b"foo")
 
     def test_not_asset(self):
         attachment = self._create_attachment("foo")
@@ -37,4 +32,4 @@ class TestAttachment(TransactionCase):
     def test_multi_write(self):
         attachments = self._create_attachment("foo")
         attachments |= self._create_attachment("bar")
-        attachments.write({"datas": self.data})
+        attachments.write({"raw": self.data})
