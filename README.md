@@ -17,7 +17,11 @@ Odoo modules for managing assets, SSO integration
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Unported addons
+---------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[database_age_cron](database_age_cron/) | 20.0.1.0.0 (unported) |  | Run a cron that determines database age
 
 [//]: # (end addons)
 
