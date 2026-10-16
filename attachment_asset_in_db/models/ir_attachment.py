@@ -25,6 +25,10 @@ class IrAttachment(models.Model):
                 OR name ilike '%.js'
                 OR name ilike '%.css'
                 OR name ilike '%.scss'
+                OR (
+                    res_model = 'auth.saml.provider'
+                    AND res_field IN ('sp_pem_public', 'sp_pem_private')
+                )
             )"""
         )
         ids = [x[0] for x in self.env.cr.fetchall()]
@@ -47,6 +51,11 @@ class IrAttachment(models.Model):
             )
             or self._context.get("force_db_storage")
             or (len(self) == 1 and self.name in ("web_icon_data", "favicon"))
+            or (
+                # certificates for 'auth_saml' module
+                len(self) == 1 and self.res_model == "auth.saml.provider"
+                and self.res_field in ('sp_pem_public', 'sp_pem_private')
+            )
         )
 
     def _get_datas_related_values(self, data, mimetype):
