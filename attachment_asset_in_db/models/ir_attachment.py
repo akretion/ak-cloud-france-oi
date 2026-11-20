@@ -37,11 +37,12 @@ class IrAttachment(models.Model):
 
     def _store_in_db(self, mimetype):
         # odoo website editor generates "application/octet-stream"
-        # so we need to also check with file name
+        # and the mimetype of custom .scss files changes to "text/plain"
+        # when they are updated by the user.
         return (
             mimetype in ("text/scss", "text/css", "application/javascript")
             or (
-                mimetype == "application/octet-stream"
+                mimetype in ("application/octet-stream", "text/plain")
                 and len(self) == 1
                 and self.name.endswith((".css", ".css.map", ".js", ".js.map", ".scss"))
             )
