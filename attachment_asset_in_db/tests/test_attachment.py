@@ -34,6 +34,15 @@ class TestAttachment(TransactionCase):
         attachment = self._create_attachment("foo")
         self.assertFalse(attachment.db_datas)
 
+    def test_asset_scss_text_plain(self):
+        # Reproduce the bug where updating a custom .scss asset changes
+        # its mimetype to "text/plain": it must still be stored in the
+        # database.
+        attachment = self._create_attachment("foo.scss", mimetype="text/scss")
+        self.assertTrue(attachment.db_datas)
+        attachment.write({"datas": self.data, "mimetype": "text/plain"})
+        self.assertEqual(attachment.db_datas, b"foo")
+
     def test_multi_write(self):
         attachments = self._create_attachment("foo")
         attachments |= self._create_attachment("bar")
