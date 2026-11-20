@@ -5,6 +5,7 @@
 import logging
 
 from odoo import api, models
+from odoo.http.stream import Stream
 
 _logger = logging.getLogger(__name__)
 
@@ -32,6 +33,30 @@ class IrAttachment(models.Model):
             _logger.info("Migrate %s asset Attachment into database", len(ids))
         for attachment in self.browse(ids):
             attachment.write({"raw": attachment.raw, "mimetype": attachment.mimetype})
+
+    def _to_http_stream(self):
+        """
+        Before, an asset with `db_datas` was rendered to the browser by its `db_datas`.
+        Since v20.0, Odoo redirects the client to the asset's URL for any assets having
+        an URL, which kills this hack because assets always have a URL.
+        => Let's re-render assets by their `db_datas` instead of URL-redirecting
+           We restitute former native behavior removed by this commit:
+           https://github.com/odoo/odoo/commit/5e8f5261e643d0ba8988ba8764bd2807a00bdc36
+        """
+        self.ensure_one()
+        if not self.store_fname and self.db_datas:
+            data = self.raw.content
+            return Stream(
+                type="data",
+                data=data,
+                mimetype=self.mimetype,
+                download_name=self.name,
+                etag=self.checksum,
+                public=self.public,
+                last_modified=self.write_date,
+                size=len(data),
+            )
+        return super()._to_http_stream()
 
     def _store_in_db(self, mimetype):
         # odoo website editor generates "application/octet-stream"
